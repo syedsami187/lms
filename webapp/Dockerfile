@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm install
 # Build app
 COPY . .
-RUN npm build
+RUN npm run build
 
 # Docker file for nginx server to serve react app build files (spa routing)
 FROM nginx:alpine
