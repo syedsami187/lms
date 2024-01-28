@@ -1,5 +1,5 @@
 # Docker file for react app created using vite
-FROM node:latest As build
+FROM node:latest AS build
 # Create app directory
 WORKDIR /app
 # Install app dependencies
@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm install
 # Build app
 COPY . .
-RUN npm run build
+RUN npm build
 
 # Docker file for nginx server to serve react app build files (spa routing)
 FROM nginx:alpine
